@@ -1,0 +1,195 @@
+
+//!! ========================================== свойства Попапа ==============================================================================================
+body.lock{
+    overflow: hidden;
+}
+.popup{
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(63, 57, 52, 0.8);
+    z-index: 100;
+    padding: 50px 0px 0px 0px;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.7s ease;
+    //animation to open
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    .popup__body{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .popup__content{
+        display: flex;
+        flex-direction: column;
+        transform: rotate(360deg) perspective(3600);
+        transition: 1s ease;
+        overflow: hidden;
+        box-shadow: 0 40px 50px rgba(0,0,0,0.5);
+        //animation to open
+        transition: 0.8s ease;
+        opacity: 0;
+        transform: perspective(400) translate(0px,+100%) rotateX(45deg);
+    }
+    .popup__header{
+        position: relative;
+        background-color: #181818;
+        h2{
+            font-size: 20px;
+            color: rgb(255, 255, 255);
+            line-height: 1.6;
+            text-transform: uppercase;
+            text-align: center;
+            padding: 16px 0px 16px 0px;
+        }
+        .popup__close-left,
+        .popup__close-right{
+            position: absolute;
+            top: 50%;
+            right: 10%;
+            width: 20px;
+            height: 2px;
+            background-color: rgb(255, 255, 255);
+            cursor: pointer;
+        }
+        .popup__close-left{
+            transform: rotate(45deg);
+        }
+        .popup__close-right{
+            transform: rotate(-45deg);
+        }
+    }
+    .popup__info{
+        background-color: #1f1f1f;
+        display: flex;
+        flex-direction: column;
+        padding: 50px 50px 25px 50px;
+        border-bottom: 1px solid #404040;
+        @media (max-width: 554px){
+            padding: 30px 15px 25px 15px;
+        }
+         .popup_form{
+            display: flex;
+            flex-direction: column;
+            label{
+                font-family: Play;
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 1.6;
+                color: rgb(255, 255, 255);
+                margin: 0px 0px 10px 0px;
+            }
+            input{
+                display: block;
+                margin: 0 auto;
+                font-family: Play, sans-serif;
+                font-weight: 400;
+                font-size: 0.875rem;
+                line-height: 1.6;
+                color: rgb(255, 255, 255);
+                background-color: rgb(40, 40, 40);
+                width: 100%;
+                min-height: 32px;
+                border: 1px solid rgb(78, 78, 78);
+                border-radius: 2px;
+                padding: 0px 35px 0px 7px;
+                margin: 0px 0px 15px 0px;
+                outline: none;
+                transition: .4s ease;
+            }
+            input:focus{
+                border: 1px solid #5378c7;
+            }
+            .popup__info-password{
+                position: relative;
+            }
+            .eye__password{
+                position: absolute;
+                top: 0;
+                right: 0;
+                transform: translate(-6px, 28px);
+                height: 24px;
+                width: 24px;
+                fill: #181818; 
+            }
+            .popup__btn{
+                button{
+                    width: 100%;
+                }
+                margin: 0px 0px 30px 0px;
+            }
+        }
+        .popup__police{
+            text-align: center;
+            span{
+                font-family: Play, sans-serif;
+                font-weight: 400;
+                font-size: 0.875rem;
+                line-height: 1.6;
+                text-align: center;
+                margin-top: 16px;
+                color: rgb(160, 160, 160);
+            }
+            a{
+                display: inline-block;
+                color: rgb(255, 255, 255);
+                transition: .6s ease;
+            }
+            a:hover{
+                color: #ff5500;
+            }
+        }
+    }
+    .popup__footer{
+            background-color: #1f1f1f;
+            padding: 25px 50px 25px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            @media (max-width: 554px){
+                padding: 25px 15px 25px 15px;
+            }
+            .popup__footer-text{
+                span{
+                    font-weight: 400;
+                    color: rgb(160, 160, 160);
+                }
+            }
+            .popup__footer-btn{
+                button{
+                    background-color: #404040;
+                    padding: 10px 16px;
+                }
+                button:hover{
+                    background-color: #5c5757;
+                }
+            }
+        }
+}
+//anomation to open
+.popup.open{
+    opacity: 1;
+    visibility: visible;
+    .popup__content{
+       opacity: 1;
+       transform: perspective(400) translate(0px,0%) rotateX(0deg); 
+    }
+}
+.popup__login{
+    .fogot__password{
+        color: rgb(160, 160, 160);
+        margin: 0px 0px 20px 0px;
+        transition: .6s ease;
+        text-align: right;
+    }
+    .fogot__password:hover{
+        color: rgb(33, 151, 33);
+    }
+}
+
+//!! ========================================== свойства  ==============================================================================================

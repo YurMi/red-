@@ -1,0 +1,131 @@
+//=================обнуления==============================================================================================================================================================================================================
+*{padding: 0;margin: 0;border: 0;}
+*,*:before,*:after{-moz-box-sizing: border-box;-webkit-box-sizing:border-box; box-sizing: border-box;}
+:focus,:active{outline: none;}
+a:focus,a:active{outline: none;}
+nav,footer,header,aside{display: block;}
+html,body{height: 100%;width: 100%;font-size: 100%; line-height:1; font-size: 14px; -ms-text-size-adjust:100%; -moz-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;}
+input,button,textarea{font-family: inherit;}
+a,a:visited{text-decoration: none;}
+body{margin:0;padding: 0;}
+h1,h2,h3,h4,h5,h6,p,img{ padding: 0; margin: 0; font-size:14px;font-weight: inherit;}
+ul li{list-style: none; padding: 0;margin:0; display: block;}
+a{text-decoration: none; padding: 0; margin:0; display: block;}
+button{cursor: pointer;padding:0;margin: 0;border:0;}
+input::-ms-clear{display: none;}
+button::-moz-focus-inner{padding:0;border:0;}
+img{vertical-align: top;}
+//=================   Шрифты    ==============================================================================================================================================================================================================
+
+
+
+
+//================   Основной Шрифт    =================================================================================================================================================================================================
+body{font-family:Superclarendon; font-weight: 400}
+//================  Переменные Брэйкпоинты  ==========================================================================================================================================================================================
+$md11: 1020px;
+$md12: 550px;
+$md1:991px;
+$md2:767px;
+$md3:575px;
+//==============================   Основная сетка БрейкПоинтов   ======================================================================================================================================================================
+.conteiner{
+	max-width: 1050px;
+	margin: 0 auto;
+	text-align: center;
+	padding: 0px 5px;
+	@media (max-width: $md1){
+		padding: 0px 20px 0px 20px;	
+	}
+	@media (max-width: $md3){
+		width: 100%;	
+		padding: 0px 5px 0px 5px;
+		margin: 0px 0px 0px 0px;
+	}
+}
+//=============================  Технические классы  ==============================================
+.fon__img,
+.fon__img3{
+	position: absolute;
+	bottom: -3px;
+	left: 0;
+	width: 100%;
+}
+.fon__img3{
+	top: -55px;
+	@media (min-width: 1616px){
+		top: -75px;
+	}
+	@media (min-width: 2150px){
+		top: -100px;
+	}
+	@media (max-width: 1150px){
+		top: -45px;
+	}
+	@media (max-width: 940px){
+		top: -30px;
+	}
+	@media (max-width: 630px){
+		top: -20px;
+	}
+	@media (max-width: 430px){
+		top: -13px;
+	}
+}
+.fon__img2{
+	position: absolute;
+	bottom: -53px;
+	left: 0;
+	width: 100%;
+	@media (max-width: 1110px){
+		bottom: -30px;
+	}
+	@media (max-width: 650px){
+		bottom: -20px;
+	}
+	@media (max-width: 410px){
+		bottom: -10px;
+	}
+}
+._title{
+	font-weight: 700;
+	font-size: 30px;
+	color: #fbe8b4;
+	text-transform: uppercase;
+}
+.footer__title{
+	margin: 0px 0px 40px 0px;
+	span{
+		font-size: 24px;
+		line-height: 1.2;
+		font-weight: 400;
+		color: #000000;
+	}
+}
+//==============================   Стили для ".ibg" тот что JQ   ======================================================================================================================================================================
+.ibg{
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	position: relative;
+}
+.ibg img{
+width: 0;
+height: 0;
+position: absolute;
+top: 0;
+left: 0;
+opacity: 0;
+visibility: hidden;
+}
+//==============================  Миксины  ===========================================================================================================================================================================================
+	//Миксин Адаптивного Шрифта
+$maxWidth: 1920; //  Ширина всего полотна макета (не контейнера)....указывать без PX
+@mixin adaptiv-font($pcSize, $mobSize) {
+ $addSize: $pcSize - $mobSize;
+ $maxWidth: $maxWidth - 320; //Минимальная ширина Въюпорта
+ font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
+}
+// Как использовать?
+	//Вставляем @include adaptiv-font(40//размер шрифта по макету,указываем без PX,18//Минимальный размер шрифта);
+	//@include adaptiv-font(40,18);
