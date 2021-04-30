@@ -1,9 +1,10 @@
 //======================  Menu_burger  ================================================
 const meny__burger = document.querySelector('.meny__burger');
 const menu = document.querySelector('.menu');
+const body = document.querySelector('body')
 if (meny__burger) {
     meny__burger.addEventListener("click", function (e) {
-        document.body.classList.toggle('lock');
+        body.classList.toggle('lock');
         meny__burger.classList.toggle('active');
         menu.classList.toggle('active');
     })
@@ -98,6 +99,12 @@ if (menuLinks.length > 0) {
                 behavior: 'smooth',
             });
             e.preventDefault();
+        }
+        // Убираем меню бургер при клике на ссылку
+        if (meny__burger.classList.contains('active')) {
+            body.classList.remove('lock');
+            meny__burger.classList.remove('active');
+            menu.classList.remove('active');
         }
     }
 }
